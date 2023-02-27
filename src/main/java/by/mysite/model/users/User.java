@@ -3,17 +3,20 @@ package by.mysite.model.users;
 public class User {
 private int id;
 private String login;
-private String password;
+private String name;
+private String email;
 
-    public User(int id, String login, String password) {
+    public User(int id, String login, String name, String email) {
         this.id = id;
         this.login = login;
-        this.password = password;
+        this.name = name;
+        this.email = email;
     }
 
-    public User(String login, String password) {
+    public User(String login, String name, String email) {
         this.login = login;
-        this.password = password;
+        this.name = name;
+        this.email = email;
     }
 
     public int getId() {
@@ -28,11 +31,19 @@ private String password;
         this.login = login;
     }
 
-    public String getPassword() {
-        return password;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

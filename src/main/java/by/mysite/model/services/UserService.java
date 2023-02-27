@@ -12,10 +12,13 @@ public class UserService {
     }
 
     public User getUser(String login, String password) {
-        //return userDao.getUser(login, password);
-        return new User(1, "Name", "Pass");
+        return userDao.getUser(login, password);
+
     }
 
+    public boolean addUser(User user, String password){
+        return userDao.addUser(user, password);
+    }
     public static UserService getInstance() {
         return service == null ? new UserService() : service;
     }

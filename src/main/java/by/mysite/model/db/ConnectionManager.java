@@ -6,7 +6,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-import static by.mysite.constants.DbConstant.DB_FILE_PROPS;
+import static by.mysite.constants.ApplicationConstant.DB_FILE_PROPS;
+
 
 public class ConnectionManager {
     private static final String DRIVER = "driver";
@@ -34,7 +35,7 @@ public class ConnectionManager {
         }
     }
 
-    public Connection getConnection() throws SQLException {
+    public static Connection getConnection() throws SQLException {
         if (cn == null || cn.isClosed()) {
             cn = DriverManager.getConnection(props.getProperty(URL), props);
         }
