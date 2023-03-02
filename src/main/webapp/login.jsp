@@ -5,7 +5,7 @@
 <html>
 <head>
     <title>Login page</title>
-    <link rel="stylesheet" href="form-style.css">
+    <link rel="stylesheet" href="css/form-style.css">
 </head>
 <body>
 <div class="grandParentContainer">

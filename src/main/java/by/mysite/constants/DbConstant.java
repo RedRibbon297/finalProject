@@ -10,5 +10,9 @@ public class DbConstant {
     public static final String SELECT_USER_BY_CREDENTIAL =
             "SELECT id, name, email FROM user WHERE login = ? AND password = ?";
 
+    public static final String SELECT_USER_BY_LOGIN = "SELECT id FROM user WHERE login = ?";
+
+    public static final String INSERT_NEW_USER = "INSERT INTO user (login, name, password, email) VALUES (?,?,?,?)";
+
 
 }

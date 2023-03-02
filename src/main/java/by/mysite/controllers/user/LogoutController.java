@@ -12,8 +12,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 import static by.mysite.constants.ApplicationConstant.LOGOUT_CONTROLLER;
-import static by.mysite.constants.JspConstant.LOGIN_JSP;
-import static by.mysite.constants.JspConstant.USER_ATTR;
+import static by.mysite.constants.JspConstant.*;
 
 @WebServlet(name = "LogoutController", value = LOGOUT_CONTROLLER)
 
@@ -25,7 +24,7 @@ public class LogoutController extends AbstractController {
         if (user != null) {
             session.invalidate();
         }
-        redirect(resp, LOGIN_JSP);
+        redirect(resp, INDEX_JSP);
 
     }
 }

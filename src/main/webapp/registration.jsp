@@ -5,7 +5,7 @@
 <html>
 <head>
     <title>Registration Page</title>
-    <link rel="stylesheet" href="form-style.css">
+    <link rel="stylesheet" href="css/form-style.css">
 </head>
 <body>
 <div class="grandParentContainer">
@@ -16,7 +16,7 @@
             <input name="<%=JspConstant.NAME_LABEL%>" placeholder="Name">
             <input type="password" name="<%=JspConstant.PASSWORD_LABEL%>" placeholder="Password">
             <input type="email" name="<%=JspConstant.EMAIL_LABEL%>" placeholder="E-mail">
-            <input type="submit" value="Login">
+            <input type="submit" value="Registration">
         </form>
         <c:if test="${not empty message}">
             <h2 class="error">${message}</h2>

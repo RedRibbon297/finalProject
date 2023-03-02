@@ -10,8 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-import static by.mysite.constants.ApplicationConstant.USER_NOT_FOUND_MESSAGE;
-import static by.mysite.constants.ApplicationConstant.LOGIN_CONTROLLER;
+import static by.mysite.constants.ApplicationConstant.*;
 import static by.mysite.constants.JspConstant.*;
 
 @WebServlet(name = "AuthorizationController", value = LOGIN_CONTROLLER)
@@ -30,7 +29,7 @@ public class AuthorizationController extends AbstractController {
             session.setAttribute(USER_ATTR, user);
             forward(req, resp, HOME_JSP);
         } else {
-            forward(req, resp, LOGIN_JSP, USER_NOT_FOUND_MESSAGE);
+            forward(req, resp, LOGIN_JSP, USER_NOT_REGISTERED_MESSAGE);
         }
 
     }

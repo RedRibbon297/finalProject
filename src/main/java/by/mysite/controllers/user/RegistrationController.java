@@ -10,8 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-import static by.mysite.constants.ApplicationConstant.LOGIN_CONTROLLER;
-import static by.mysite.constants.ApplicationConstant.REGISTRATION_CONTROLLER;
+import static by.mysite.constants.ApplicationConstant.*;
 import static by.mysite.constants.JspConstant.*;
 
 @WebServlet(name = "RegistrationController", value = REGISTRATION_CONTROLLER)
@@ -25,7 +24,11 @@ public class RegistrationController extends AbstractController {
 
         User user = new User(login, name, email);
 
-
+        if (userService.addUser(user, password)) {
+            redirect(resp, LOGIN_JSP);
+        } else {
+            forward(req, resp, REGISTRATION_JSP, USER_NOT_FOUND_MESSAGE);
+        }
 
     }
 }
