@@ -1,31 +1,68 @@
-Html, body {
-    height: 100%;
-}
-
-.grandParentContainer {
-    display: table;
-    height: 100%;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.parentContainer {
-    display: table-cell;
-    vertical-align: middle;
-}
-
-.parentContainer .loginForm {
-    background: cornflowerblue;
-    border: 1px solid #eee;
-    padding: 10px;
-    width: 200px;
-    text-align: center;
-}
-
-.parentContainer .error {
+.error {
     color: firebrick;
 }
 
+.default-image {
+    width: 100%;
+    opacity: 0.5;
+}
+
+.nav-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: gray;
+}
+
+.nav-li {
+    float: right;
+}
+
+.nav-li.float-left {
+    float: left;
+}
+
+.nav-li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-li a:hover:not(.active) {
+    background-color: dimgray;
+}
+
+.active {
+    background-color: #2a872a;
+}
+
+.form-box {
+    text-align: center;
+    position: absolute;
+    background-color: lightgrey;
+    width: 300px;
+    border: 10px solid#2a872a;
+    padding: 50px;
+    margin: 20px;
+    top: 30%;
+    left: 38%;
+}
+
 input {
+    width: 200px;
+    padding: 5px;
     margin: 5px;
 }
+
+input[type=submit] {
+    width: 100px;
+    background-color: #2a872a;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+

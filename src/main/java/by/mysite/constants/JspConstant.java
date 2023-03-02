@@ -8,11 +8,11 @@ public class JspConstant {
     public static final String MESSAGE_ATTR = "message";
     public static final String USER_ATTR = "user";
 
-    public static final String HOME_JSP = "/home.jsp";
+    public static final String HOME_JSP = "/jsp/home.jsp";
     public static final String INDEX_JSP = "/index.jsp";
-    public static final String LOGIN_JSP = "/login.jsp";
-    public static final String REGISTRATION_JSP = "/registration.jsp";
-    public static final String MENU_JSP = "/menu.jsp";
+    public static final String LOGIN_JSP = "/jsp/login.jsp";
+    public static final String REGISTRATION_JSP = "/jsp/registration.jsp";
+    public static final String MENU_JSP = "/jsp/menu.jsp";
 
 
 

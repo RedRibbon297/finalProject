@@ -5,7 +5,7 @@
 
 <ul class="nav-ul">
     <c:choose>
-        <c:when test="empty user">
+        <c:when test="${empty user}">
             <li class="nav-li float-left">
                 <a class="active" href="<c:url value="<%=JspConstant.INDEX_JSP%>"/>"> Home </a>
             </li>
