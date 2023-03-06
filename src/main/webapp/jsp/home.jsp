@@ -5,7 +5,7 @@
 <html>
 <head>
     <title>Home page</title>
-    <link rel="stylesheet" href="/css/form-style.css">
+    <link rel="stylesheet" href="../css/form-style.css">
 </head>
 <body>
 <jsp:include page="<%=JspConstant.MENU_JSP%>"/>

@@ -5,11 +5,11 @@
 <html>
 <head>
     <title>Registration Page</title>
-    <link rel="stylesheet" href="/css/form-style.css">
+    <link rel="stylesheet" href="../css/form-style.css">
 </head>
 <body>
 <jsp:include page="<%=JspConstant.MENU_JSP%>"/>
-<img class="default-image" src="/img/pizza1.jpg" alt="pizza1">
+<img class="default-image" src="../img/pizza1.jpg" alt="pizza1">
 <div class="form-box">
         <h2>Registration</h2>
         <form class="loginForm" method="post" action="<c:url value="<%=ApplicationConstant.REGISTRATION_CONTROLLER %>"/> ">
