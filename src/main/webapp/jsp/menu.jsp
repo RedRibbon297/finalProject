@@ -7,7 +7,7 @@
     <c:choose>
         <c:when test="${empty user}">
             <li class="nav-li float-left">
-                <a class="active" href="<c:url value="<%=JspConstant.INDEX_JSP%>"/>"> Home </a>
+                <a class="active" href="<c:url value="<%=JspConstant.INDEX_JSP%>"/>">Home</a>
             </li>
             <li class="nav-li">
                 <a href="<c:url value="<%=JspConstant.LOGIN_JSP%>"/>">Log In</a>
@@ -18,7 +18,7 @@
         </c:when>
         <c:otherwise>
             <li class="nav-li float-left">
-                <a class="active" href="<c:url value="<%=JspConstant.HOME_JSP%>"/>"> Home </a>
+                <a class="active" href="<c:url value="<%=JspConstant.HOME_JSP%>"/>">Home</a>
             </li>
             <li class="nav-li">
                 <a href="<c:url value="<%=ApplicationConstant.LOGOUT_CONTROLLER%>"/>">Log Out</a>
