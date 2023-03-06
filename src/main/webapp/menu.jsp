@@ -20,6 +20,12 @@
             <li class="nav-li float-left">
                 <a class="active" href="<c:url value="<%=JspConstant.HOME_JSP%>"/>">Home</a>
             </li>
+            <li class="nav-li float-left">
+                <a href="<c:url value = "<%=ApplicationConstant.PIZZAS_MENU%>"/>">Pizza</a>
+            </li>
+            <li class="nav-li float-left">
+                <a href="<c:url value = "<%=ApplicationConstant.DRINKS_MENU%>"/>">Drink</a>
+            </li>
             <li class="nav-li">
                 <a href="<c:url value="<%=ApplicationConstant.LOGOUT_CONTROLLER%>"/>">Log Out</a>
             </li>

@@ -6,6 +6,7 @@ public class DbConstant {
     public static final String NAME_COL = "name";
     public static final String PASSWORD_COL = "password";
     public static final String EMAIL_COL = "email";
+    public static final String PRICE_COL = "price";
 
     public static final String SELECT_USER_BY_CREDENTIAL =
             "SELECT id, name, email FROM user WHERE login = ? AND password = ?";
@@ -13,6 +14,6 @@ public class DbConstant {
     public static final String SELECT_USER_BY_LOGIN = "SELECT id FROM user WHERE login = ?";
 
     public static final String INSERT_NEW_USER = "INSERT INTO user (login, name, password, email) VALUES (?,?,?,?)";
-
+    public static final String SELECT_FOOD_ITEMS_BY_TYPE = "SELECT id, name, price FROM foodItem WHERE foodTypeId = ?";
 
 }

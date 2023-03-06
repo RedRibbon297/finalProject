@@ -44,7 +44,7 @@
     position: absolute;
     background-color: lightgrey;
     width: 300px;
-    border: 10px solid#2a872a;
+    border: 10px solid #2a872a;
     padding: 50px;
     margin: 20px;
     top: 30%;
@@ -61,6 +61,38 @@ input[type=submit] {
     width: 100px;
     background-color: #2a872a;
     margin: 4px 2px;
+    cursor: pointer;
+}
+
+.food-item-box {
+    background: lightgrey;
+    width: 200px;
+    height: 251px;
+    border: 1px solid green;
+    padding: 15px;
+    margin: 25px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.small-image {
+    width: 200px;
+}
+
+input[type=number] {
+    width: 45px;
+    padding: 5px;
+}
+
+.food-item-box input[type=submit] {
+    width: 100px;
+    height: 30px;
+    background: green;
+    border: none;
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+    margin-left: 35px;
     cursor: pointer;
 }
 

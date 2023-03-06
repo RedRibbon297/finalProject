@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>Pizza PO-60</title>
-    <link rel="stylesheet" href="css/form-style.css">
+    <link rel="stylesheet" href="form-style.css">
 </head>
 <body>
 

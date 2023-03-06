@@ -7,12 +7,21 @@ public class JspConstant {
     public static final String PASSWORD_LABEL = "password";
     public static final String MESSAGE_ATTR = "message";
     public static final String USER_ATTR = "user";
+    public static final String PIZZA_ATTR = "pizzas";
+    public static final String DRINK_ATTR = "drinks";
 
-    public static final String HOME_JSP = "/jsp/home.jsp";
+    public static final String HOME_JSP = "/home.jsp";
     public static final String INDEX_JSP = "/index.jsp";
-    public static final String LOGIN_JSP = "/jsp/login.jsp";
-    public static final String REGISTRATION_JSP = "/jsp/registration.jsp";
-    public static final String MENU_JSP = "/jsp/menu.jsp";
+    public static final String LOGIN_JSP = "/login.jsp";
+    public static final String REGISTRATION_JSP = "/registration.jsp";
+    public static final String MENU_JSP = "/menu.jsp";
+
+    public static final String FOOD_TYPE_PARAM = "foodType";
+    public static final String FOOD_ID_PARAM = "id";
+    public static final String FOOD_NAME_PARAM = "name";
+    public static final String FOOD_PRICE_PARAM = "price";
+    public static final String FOOD_QUANTITY_PARAM = "quantity";
+    public static final String CART_ACTION_PARAM = "cartAction";
 
 
 

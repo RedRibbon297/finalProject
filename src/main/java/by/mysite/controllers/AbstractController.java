@@ -1,5 +1,6 @@
 package by.mysite.controllers;
 
+import by.mysite.model.services.FoodService;
 import by.mysite.model.services.UserService;
 
 import javax.servlet.ServletException;
@@ -15,19 +16,21 @@ import static by.mysite.constants.JspConstant.*;
 
 public class AbstractController extends HttpServlet {
     protected UserService userService;
+    protected FoodService foodService;
 
     public AbstractController() {
         userService = UserService.getInstance();
+        foodService = FoodService.getInstance();
     }
 
     protected void forward(HttpServletRequest req,
-                        HttpServletResponse resp, String url) throws ServletException, IOException {
+                           HttpServletResponse resp, String url) throws ServletException, IOException {
         req.getRequestDispatcher(url).forward(req, resp);
     }
 
     protected void forward(HttpServletRequest req,
-                        HttpServletResponse resp,
-                        String url, String message) throws ServletException, IOException {
+                           HttpServletResponse resp,
+                           String url, String message) throws ServletException, IOException {
         req.setAttribute(MESSAGE_ATTR, message);
         forward(req, resp, url);
     }
