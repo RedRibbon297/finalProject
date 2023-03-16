@@ -1,27 +1,21 @@
 package by.mysite.model.services;
 
 import by.mysite.model.dao.UserDao;
-import by.mysite.model.users.User;
+import by.mysite.model.entities.users.User;
 
-public class UserService {
-    private static UserService service;
+public class UserService implements Service {
+
     private UserDao userDao;
 
     public UserService() {
-        userDao = UserDao.getInstance();
+        userDao = new UserDao();
     }
 
     public User getUser(String login, String password) {
         return userDao.getUser(login, password);
-
     }
 
-    public boolean addUser(User user, String password){
+    public boolean addUser(User user, String password) {
         return userDao.addUser(user, password);
     }
-    public static UserService getInstance() {
-        return service == null ? new UserService() : service;
-    }
-
-
 }

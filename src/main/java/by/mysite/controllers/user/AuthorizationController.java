@@ -1,7 +1,7 @@
 package by.mysite.controllers.user;
 
-import by.mysite.controllers.AbstractController;
-import by.mysite.model.users.User;
+import by.mysite.controllers.abstracts.AbstractUserController;
+import by.mysite.model.entities.users.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +15,7 @@ import static by.mysite.constants.JspConstant.*;
 
 @WebServlet(name = "AuthorizationController", value = LOGIN_CONTROLLER)
 
-public class AuthorizationController extends AbstractController {
+public class AuthorizationController extends AbstractUserController {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -31,7 +31,5 @@ public class AuthorizationController extends AbstractController {
         } else {
             forward(req, resp, LOGIN_JSP, USER_NOT_REGISTERED_MESSAGE);
         }
-
     }
-
 }

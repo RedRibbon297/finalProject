@@ -1,7 +1,7 @@
 package by.mysite.controllers.user;
 
-import by.mysite.controllers.AbstractController;
-import by.mysite.model.users.User;
+import by.mysite.controllers.abstracts.AbstractUserController;
+import by.mysite.model.entities.users.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +16,7 @@ import static by.mysite.constants.JspConstant.*;
 
 @WebServlet(name = "LogoutController", value = LOGOUT_CONTROLLER)
 
-public class LogoutController extends AbstractController {
+public class LogoutController extends AbstractUserController {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
@@ -25,6 +25,5 @@ public class LogoutController extends AbstractController {
             session.invalidate();
         }
         redirect(resp, INDEX_JSP);
-
     }
 }

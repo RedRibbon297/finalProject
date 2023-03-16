@@ -2,9 +2,11 @@ package by.mysite.controllers.order;
 
 import by.mysite.constants.ApplicationConstant;
 import by.mysite.constants.JspConstant;
-import by.mysite.controllers.AbstractController;
+import by.mysite.controllers.abstracts.AbstractController;
 import by.mysite.model.entities.food.FoodItem;
 import by.mysite.model.entities.order.OrderItem;
+import by.mysite.model.services.CartService;
+import by.mysite.model.services.ServiceFactory;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -12,8 +14,16 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
+import static by.mysite.model.services.ServiceType.CART_SERVICE;
+
 @WebServlet(name = " CartController", value = ApplicationConstant.CART_CONTROLLER)
 public class CartController extends AbstractController {
+    private CartService cartService;
+
+    @Override
+    public void init() {
+        cartService = (CartService) ServiceFactory.getService(CART_SERVICE);
+    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -33,12 +43,10 @@ public class CartController extends AbstractController {
         session.setAttribute(JspConstant.ORDER_ITEMS_ATTR, items);
 
         if ("addToCart".equals(cartAction)) {
-            redirectToMenuPage(resp,foodType);
+            redirectToMenuPage(resp, foodType);
         } else {
             redirect(resp, JspConstant.CART_JSP);
         }
-
-
     }
 
     private void redirectToMenuPage(HttpServletResponse resp, int foodType) throws ServletException, IOException {

@@ -1,7 +1,7 @@
 package by.mysite.model.dao;
 
 import by.mysite.model.db.ConnectionManager;
-import by.mysite.model.users.User;
+import by.mysite.model.entities.users.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,15 +11,6 @@ import java.sql.SQLException;
 import static by.mysite.constants.DbConstant.*;
 
 public class UserDao {
-    private static UserDao dao;
-
-    public UserDao() {
-        ConnectionManager.init();
-    }
-
-    public static UserDao getInstance() {
-        return dao == null ? new UserDao() : dao;
-    }
 
     public User getUser(String login, String password) {
         try (Connection cn = ConnectionManager.getConnection();

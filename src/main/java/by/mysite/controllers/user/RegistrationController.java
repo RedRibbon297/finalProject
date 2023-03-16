@@ -1,7 +1,7 @@
 package by.mysite.controllers.user;
 
-import by.mysite.controllers.AbstractController;
-import by.mysite.model.users.User;
+import by.mysite.controllers.abstracts.AbstractUserController;
+import by.mysite.model.entities.users.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +14,7 @@ import static by.mysite.constants.ApplicationConstant.*;
 import static by.mysite.constants.JspConstant.*;
 
 @WebServlet(name = "RegistrationController", value = REGISTRATION_CONTROLLER)
-public class RegistrationController extends AbstractController {
+public class RegistrationController extends AbstractUserController {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String login = req.getParameter(LOGIN_LABEL);
@@ -29,6 +29,5 @@ public class RegistrationController extends AbstractController {
         } else {
             forward(req, resp, REGISTRATION_JSP, USER_NOT_FOUND_MESSAGE);
         }
-
     }
 }

@@ -1,12 +1,10 @@
 package by.mysite.model.dao;
 
-import by.mysite.constants.ApplicationConstant;
-import by.mysite.constants.DbConstant;
 import by.mysite.constants.JspConstant;
 import by.mysite.model.db.ConnectionManager;
 import by.mysite.model.entities.order.Order;
 import by.mysite.model.entities.order.OrderItem;
-import by.mysite.model.users.User;
+import by.mysite.model.entities.users.User;
 
 import javax.servlet.http.HttpSession;
 import java.sql.Connection;
@@ -17,17 +15,11 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import static by.mysite.constants.DbConstant.*;
 import static by.mysite.constants.JspConstant.ORDER_ID_ATTR;
 
 public class OrderDao {
-    private static OrderDao dao;
-
-    public static OrderDao getInstance() {
-        return Objects.isNull(dao) ? new OrderDao() : dao;
-    }
 
     public boolean saveOrder(HttpSession session, String address) {
         User user = (User) session.getAttribute(JspConstant.USER_ATTR);
@@ -122,8 +114,6 @@ public class OrderDao {
                 sb.append("<h2 class = 'underlined'> You ordered: </h2>");
                 sb.append(getItems(orderId));
                 sb.append(getTotalAmount(orderId));
-
-
             }
         } catch (SQLException e) {
             e.printStackTrace();

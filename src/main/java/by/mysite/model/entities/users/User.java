@@ -1,4 +1,4 @@
-package by.mysite.model.users;
+package by.mysite.model.entities.users;
 
 public class User {
 private int id;

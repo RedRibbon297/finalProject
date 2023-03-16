@@ -3,8 +3,10 @@ package by.mysite.controllers.food;
 import static by.mysite.constants.ApplicationConstant.MENU_CONTROLLER;
 import static by.mysite.constants.JspConstant.*;
 
-import by.mysite.controllers.AbstractController;
+import by.mysite.controllers.abstracts.AbstractController;
 import by.mysite.model.entities.food.FoodItem;
+import by.mysite.model.services.FoodService;
+import by.mysite.model.services.ServiceFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,8 +15,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+import static by.mysite.model.services.ServiceType.FOOD_SERVICE;
+
 @WebServlet(name = "MenuController", value = MENU_CONTROLLER)
 public class MenuController extends AbstractController {
+    private FoodService foodService;
+
+    @Override
+    public void init() {
+        foodService = (FoodService) ServiceFactory.getService(FOOD_SERVICE);
+    }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int foodType = Integer.parseInt(req.getParameter(FOOD_TYPE_PARAM));

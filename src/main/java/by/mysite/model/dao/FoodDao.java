@@ -9,16 +9,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import static by.mysite.constants.DbConstant.*;
 
 public class FoodDao {
-    private static FoodDao dao;
-
-    public static FoodDao getInstance() {
-        return Objects.isNull(dao) ? new FoodDao() : dao;
-    }
 
     public List<FoodItem> getFoodItemByType(int foodType) {
         List<FoodItem> items = new ArrayList<>();

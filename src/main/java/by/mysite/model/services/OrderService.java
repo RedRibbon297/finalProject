@@ -7,16 +7,12 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Objects;
 
-public class OrderService {
-    private static OrderService service;
+public class OrderService implements Service {
+
     private OrderDao dao;
 
     public OrderService() {
-        dao = OrderDao.getInstance();
-    }
-
-    public static OrderService getInstance() {
-        return Objects.isNull(service) ? new OrderService() : service;
+        dao = new OrderDao();
     }
 
     public boolean saveOrder(HttpSession session, String address) {

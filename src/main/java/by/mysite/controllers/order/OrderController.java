@@ -2,7 +2,8 @@ package by.mysite.controllers.order;
 
 import by.mysite.constants.ApplicationConstant;
 import by.mysite.constants.JspConstant;
-import by.mysite.controllers.AbstractController;
+import by.mysite.controllers.abstracts.AbstractController;
+import by.mysite.controllers.abstracts.AbstractOrderController;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +16,7 @@ import static by.mysite.constants.JspConstant.ORDER_ID_ATTR;
 import static by.mysite.constants.JspConstant.ORDER_ITEMS_ATTR;
 
 @WebServlet(name = "OrderController", value = ApplicationConstant.ORDER_CONTROLLER)
-public class OrderController extends AbstractController {
+public class OrderController extends AbstractOrderController {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String address = req.getParameter(JspConstant.ADDRESS_PARAM);
