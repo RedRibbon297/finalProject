@@ -16,10 +16,6 @@ import static by.mysite.constants.DbConstant.*;
 public class FoodDao {
     private static FoodDao dao;
 
-    public FoodDao() {
-        ConnectionManager.init();
-    }
-
     public static FoodDao getInstance() {
         return Objects.isNull(dao) ? new FoodDao() : dao;
     }

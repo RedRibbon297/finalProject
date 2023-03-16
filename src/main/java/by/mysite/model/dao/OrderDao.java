@@ -25,10 +25,6 @@ import static by.mysite.constants.JspConstant.ORDER_ID_ATTR;
 public class OrderDao {
     private static OrderDao dao;
 
-    public OrderDao() {
-        ConnectionManager.init();
-    }
-
     public static OrderDao getInstance() {
         return Objects.isNull(dao) ? new OrderDao() : dao;
     }
