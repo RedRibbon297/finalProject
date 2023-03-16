@@ -29,6 +29,12 @@
             <li class="nav-li">
                 <a href="<c:url value="<%=ApplicationConstant.LOGOUT_CONTROLLER%>"/>">Log Out</a>
             </li>
+            <li class="nav-li">
+                <a href="<c:url value="<%=JspConstant.CART_JSP%>"/>">Cart</a>
+            </li>
+            <li class="nav-li">
+                <a href="<c:url value="<%=ApplicationConstant.ORDERS_HISTORY_CONTROLLER%>"/>">Orders</a>
+            </li>
         </c:otherwise>
     </c:choose>
 </ul>

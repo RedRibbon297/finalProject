@@ -8,9 +8,15 @@
     <link rel="stylesheet" href="form-style.css">
 </head>
 <body>
-<jsp:include page="<%=JspConstant.MENU_JSP%>"/>
-<h2>Hello ${user.name}!</h2>
-<h1>Some content</h1>
+    <jsp:include page="<%=JspConstant.MENU_JSP%>"/>
+    <h2>Hello ${user.name}!</h2>
+
+    <c:if test="${not empty message}">
+        <h2>${message}</h2>
+    </c:if>
+
+    <jsp:include page="slider.html"/>
+
 <c:if test="${not empty pizzas}">
     <h2>Today we propose next Pizzas</h2>
     <c:forEach var="pizza" items="${pizzas}">
@@ -25,7 +31,7 @@
                 <input type="hidden" name="<%=JspConstant.FOOD_NAME_PARAM%>" value="${pizza.name}">
                 <input type="hidden" name="<%=JspConstant.FOOD_PRICE_PARAM%>" value="${pizza.price}">
 
-                <input type="number" name="<%=JspConstant.FOOD_QUANTITY_PARAM%>">
+                <input type="number" name="<%=JspConstant.FOOD_QUANTITY_PARAM%>" required>
 
                 <input type="submit" value="Add to Cart">
             </form>
@@ -47,7 +53,7 @@
                 <input type="hidden" name="<%=JspConstant.FOOD_NAME_PARAM%>" value="${drink.name}">
                 <input type="hidden" name="<%=JspConstant.FOOD_PRICE_PARAM%>" value="${drink.price}">
 
-                <input type="number" name="<%=JspConstant.FOOD_QUANTITY_PARAM%>">
+                <input type="number" name="<%=JspConstant.FOOD_QUANTITY_PARAM%>" required>
 
                 <input type="submit" value="Add to Cart">
             </form>
