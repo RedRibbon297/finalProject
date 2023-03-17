@@ -13,9 +13,12 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
-import static by.mysite.constants.JspConstant.*;
+import static by.mysite.constants.JspConstant.USER_ATTR;
+import static by.mysite.constants.JspConstant.ORDERS_LIST_ATTR;
+import static by.mysite.constants.JspConstant.ORDERS_JSP;
+import static by.mysite.constants.ApplicationConstant.ORDERS_HISTORY_CONTROLLER;
 
-@WebServlet(name = "OrderHistoryController", value = ApplicationConstant.ORDERS_HISTORY_CONTROLLER)
+@WebServlet(name = "OrderHistoryController", value = ORDERS_HISTORY_CONTROLLER)
 public class OrderHistoryController extends AbstractOrderController {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

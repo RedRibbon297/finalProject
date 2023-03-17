@@ -9,9 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import static by.mysite.constants.JspConstant.*;
+import static by.mysite.constants.JspConstant.ORDER_ID_ATTR;
+import static by.mysite.constants.JspConstant.RECEIPT_ATTR;
+import static by.mysite.constants.JspConstant.RECEIPT_JSP;
+import static by.mysite.constants.ApplicationConstant.PRINT_ORDER_CONTROLLER;
 
-@WebServlet(name = "PrintOrderController", value = ApplicationConstant.PRINT_ORDER_CONTROLLER)
+@WebServlet(name = "PrintOrderController", value = PRINT_ORDER_CONTROLLER)
 public class PrintOrderController extends AbstractOrderController {
 
     @Override

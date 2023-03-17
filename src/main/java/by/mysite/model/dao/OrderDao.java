@@ -104,14 +104,14 @@ public class OrderDao {
         try (Connection cn = ConnectionManager.getConnection();
              PreparedStatement ps = cn.prepareStatement(SELECT_HEAD_FOR_ORDER)) {
             ps.setString(1, orderId);
-            ResultSet resultSet = ps.executeQuery();
-            if (resultSet.next()) {
-                String date = resultSet.getString(DATE_COL);
-                String address = resultSet.getString(ADDRESS_COL);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                String date = rs.getString(DATE_COL);
+                String address = rs.getString(ADDRESS_COL);
                 sb.append("<h2>Order Id:").append(orderId).append("</h2>")
-                        .append("<h2>Date of order:").append(date).append("</h2>")
-                        .append("<h2>Delivery address:").append(address).append("</h2>");
-                sb.append("<h2 class = 'underlined'> You ordered: </h2>");
+                        .append("<h2>Date of order: ").append(date).append("</h2>")
+                        .append("<h2>Delivery address: ").append(address).append("</h2>");
+                sb.append("<h2 class = 'underlined'>You ordered: </h2>");
                 sb.append(getItems(orderId));
                 sb.append(getTotalAmount(orderId));
             }
@@ -146,7 +146,7 @@ public class OrderDao {
             ps.setString(1, orderId);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                sb.append("<h2 class = 'underlined'> Total amount: ")
+                sb.append("<h2 class = 'underlined'>Total amount: ")
                         .append(rs.getDouble(AMOUNT_COL)).append(" byn.</h2>");
             }
 
