@@ -12,7 +12,8 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 import static by.mysite.constants.ApplicationConstant.LOGOUT_CONTROLLER;
-import static by.mysite.constants.JspConstant.*;
+import static by.mysite.constants.JspConstant.USER_ATTR;
+import static by.mysite.constants.JspConstant.INDEX_JSP;
 
 @WebServlet(name = "LogoutController", value = LOGOUT_CONTROLLER)
 

@@ -5,6 +5,7 @@ public class JspConstant {
     public static final String NAME_LABEL = "name";
     public static final String EMAIL_LABEL = "email";
     public static final String PASSWORD_LABEL = "password";
+
     public static final String MESSAGE_ATTR = "message";
     public static final String USER_ATTR = "user";
     public static final String PIZZA_ATTR = "pizzas";
@@ -30,9 +31,5 @@ public class JspConstant {
     public static final String FOOD_QUANTITY_PARAM = "quantity";
     public static final String CART_ACTION_PARAM = "cartAction";
     public static final String ADDRESS_PARAM = "address";
-
-
-
-
 
 }

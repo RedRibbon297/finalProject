@@ -25,8 +25,7 @@ public class CartService implements Service{
                 items.remove(item);
                 break;
             }
-            default:
-                break;
+            default: break;
         }
         return items;
     }

@@ -8,7 +8,6 @@ import java.util.Properties;
 
 import static by.mysite.constants.ApplicationConstant.DB_FILE_PROPS;
 
-
 public class ConnectionManager {
     private static final String DRIVER = "driver";
     private static final String URL = "url";

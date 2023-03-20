@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import static by.mysite.constants.JspConstant.*;
+import static by.mysite.constants.JspConstant.MESSAGE_ATTR;
 
 @WebServlet(name = "AbstractController")
 

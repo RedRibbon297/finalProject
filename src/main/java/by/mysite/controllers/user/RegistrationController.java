@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-import static by.mysite.constants.ApplicationConstant.*;
+import static by.mysite.constants.ApplicationConstant.REGISTRATION_CONTROLLER;
+import static by.mysite.constants.ApplicationConstant.USER_NOT_FOUND_MESSAGE;
 import static by.mysite.constants.JspConstant.*;
 
 @WebServlet(name = "RegistrationController", value = REGISTRATION_CONTROLLER)

@@ -1,10 +1,10 @@
 package by.mysite.model.entities.users;
 
 public class User {
-private int id;
-private String login;
-private String name;
-private String email;
+    private int id;
+    private String login;
+    private String name;
+    private String email;
 
     public User(int id, String login, String name, String email) {
         this.id = id;

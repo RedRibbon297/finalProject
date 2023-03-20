@@ -5,7 +5,6 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class PropertiesManager {
-
     public static Properties getProperties(InputStream is) {
         Properties props = new Properties();
         try {
@@ -23,6 +22,4 @@ public class PropertiesManager {
         }
         return props;
     }
-
-
 }

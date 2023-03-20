@@ -6,6 +6,7 @@
 <head>
     <title>Home page</title>
     <link rel="stylesheet" href="form-style.css">
+    <script src="slider.js"></script>
 </head>
 <body>
     <jsp:include page="<%=JspConstant.MENU_JSP%>"/>

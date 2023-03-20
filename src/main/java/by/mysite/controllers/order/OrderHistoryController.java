@@ -1,6 +1,5 @@
 package by.mysite.controllers.order;
 
-import by.mysite.constants.ApplicationConstant;
 import by.mysite.controllers.abstracts.AbstractOrderController;
 import by.mysite.model.entities.order.Order;
 import by.mysite.model.entities.users.User;
@@ -24,7 +23,6 @@ public class OrderHistoryController extends AbstractOrderController {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         int userId = ((User) session.getAttribute(USER_ATTR)).getId();
-
         List<Order> ordersList = orderService.getOrdersList(userId);
         req.setAttribute(ORDERS_LIST_ATTR, ordersList);
         forward(req, resp, ORDERS_JSP);

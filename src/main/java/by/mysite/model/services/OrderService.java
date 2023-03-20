@@ -5,7 +5,6 @@ import by.mysite.model.entities.order.Order;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
-import java.util.Objects;
 
 public class OrderService implements Service {
 

@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-import static by.mysite.constants.ApplicationConstant.*;
+import static by.mysite.constants.ApplicationConstant.LOGIN_CONTROLLER;
+import static by.mysite.constants.ApplicationConstant.USER_NOT_REGISTERED_MESSAGE;
 import static by.mysite.constants.JspConstant.*;
 
 @WebServlet(name = "AuthorizationController", value = LOGIN_CONTROLLER)

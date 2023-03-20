@@ -18,8 +18,10 @@
         <c:forEach var="item" items="${orderItems}">
             <div class="cart-item-container">
                 <img class="cart-img" src="img/${item.item.name}.jpg" alt="item">
-                <h3 class="cart-text">You ordered ${item.quantity} ${item.item.name} by ${item.item.price} byn.
-                    Amount is ${item.quantity*item.item.price} byn.</h3>
+                <h3 class="cart-text">
+                    You ordered ${item.quantity} ${item.item.name} by ${item.item.price} byn.
+                    Amount is ${item.quantity*item.item.price} byn.
+                </h3>
                 <form method="post" action="<c:url value="<%=ApplicationConstant.CART_CONTROLLER%>"/>">
                     <input type="hidden" name="<%=JspConstant.CART_ACTION_PARAM%>" value="removeFromCart">
                     <input type="hidden" name="<%=JspConstant.FOOD_ID_PARAM%>" value="${item.item.id}">

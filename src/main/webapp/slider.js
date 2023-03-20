@@ -6,7 +6,6 @@ function SlideShow() {
         slides[i].style.display = "none";
     }
     slidePosition++;
-
     if (slidePosition > slides.length) {
         slidePosition = 1;
     }

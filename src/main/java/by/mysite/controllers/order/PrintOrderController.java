@@ -1,6 +1,5 @@
 package by.mysite.controllers.order;
 
-import by.mysite.constants.ApplicationConstant;
 import by.mysite.controllers.abstracts.AbstractOrderController;
 
 import javax.servlet.ServletException;

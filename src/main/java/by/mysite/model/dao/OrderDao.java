@@ -18,19 +18,20 @@ import java.util.List;
 
 import static by.mysite.constants.DbConstant.*;
 import static by.mysite.constants.JspConstant.ORDER_ID_ATTR;
+import static by.mysite.constants.JspConstant.USER_ATTR;
+import static by.mysite.constants.JspConstant.ORDER_ITEMS_ATTR;
 
 public class OrderDao {
 
     public boolean saveOrder(HttpSession session, String address) {
-        User user = (User) session.getAttribute(JspConstant.USER_ATTR);
+        User user = (User) session.getAttribute(USER_ATTR);
         LocalDateTime now = LocalDateTime.now();
 
         String date = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         String time = now.format(DateTimeFormatter.ofPattern("HH-mm-ss"));
-
         String orderId = user.getName() + "-" + date + "-" + time;
 
-        List<OrderItem> items = (List<OrderItem>) session.getAttribute(JspConstant.ORDER_ITEMS_ATTR);
+        List<OrderItem> items = (List<OrderItem>) session.getAttribute(ORDER_ITEMS_ATTR);
 
         boolean success = true;
 
@@ -41,14 +42,11 @@ public class OrderDao {
                     success = false;
                 }
             }
-        } else {
-            return false;
-        }
+        } else return false;
 
         if (success) {
             session.setAttribute(ORDER_ID_ATTR, orderId);
         }
-
         return success;
     }
 
@@ -60,7 +58,6 @@ public class OrderDao {
             ps.setInt(3, userId);
             ps.setString(4, address);
             return ps.executeUpdate() > 0;
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -92,7 +89,6 @@ public class OrderDao {
                 String address = resultSet.getString(ADDRESS_COL);
                 orders.add(new Order(id, date, userId, address));
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -132,7 +128,6 @@ public class OrderDao {
                         .append(" by ").append(rs.getDouble(PRICE_COL)).append(" byn. Amount: ")
                         .append(rs.getDouble(AMOUNT_COL)).append(" byn.</h2>");
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
