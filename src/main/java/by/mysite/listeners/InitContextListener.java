@@ -1,4 +1,4 @@
-package by.mysite.listener;
+package by.mysite.listeners;
 
 import by.mysite.model.db.ConnectionManager;
 import by.mysite.model.services.ServiceFactory;
