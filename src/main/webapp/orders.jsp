@@ -17,7 +17,7 @@
                    <div class="order-list-container">
                        <h3>${order.date} you ordered delivery to ${order.address}. Order id is ${order.id}.</h3>
                        <form method="post" action="<c:url value="<%=ApplicationConstant.PRINT_ORDER_CONTROLLER%>"/>">
-                           <input type="hidden" name="<%=JspConstant.ORDER_ID_ATTR%>>" value="${order.id}">
+                           <input type="hidden" name="<%=JspConstant.ORDER_ID_ATTR%>" value="${order.id}">
                            <input type="submit" value="Print receipt">
                        </form>
                    </div>
