@@ -33,4 +33,6 @@ public class DbConstant {
     public static final String SELECT_ITEMS = "SELECT f.name AS name, f.price AS price, o.quantity AS quantity, (f.price*o.quantity) AS amount FROM foodItem f INNER JOIN orderItem o ON f.id = o.itemId WHERE o.orderId = ?";
 
     public static final String SELECT_TOTAL_AMOUNT = "SELECT SUM(amount) AS amount FROM (" + SELECT_ITEMS + ") temp";
+
+    public static final String REMOVE_ORDER_BY_ID = "DELETE FROM orders WHERE id = ?";
 }

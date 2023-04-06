@@ -25,4 +25,8 @@ public class OrderService implements Service {
     public String getReceipt(String orderId) {
         return dao.getReceipt(orderId);
     }
+
+    public void removeOrderById(String orderId) {
+        dao.removeOrderById(orderId);
+    }
 }

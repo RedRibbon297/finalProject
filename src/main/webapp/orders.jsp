@@ -20,6 +20,10 @@
                            <input type="hidden" name="<%=JspConstant.ORDER_ID_ATTR%>" value="${order.id}">
                            <input type="submit" value="Print receipt">
                        </form>
+                       <form method="post" action="<c:url value="<%=ApplicationConstant.REMOVE_ORDER_CONTROLLER%>"/>">
+                           <input type="hidden" name="<%=JspConstant.ORDER_ID_ATTR%>" value="${order.id}">
+                           <input type="submit" value="Remove order">
+                       </form>
                    </div>
                </c:forEach>
            </c:when>

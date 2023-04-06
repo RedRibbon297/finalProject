@@ -1,6 +1,5 @@
 package by.mysite.model.dao;
 
-import by.mysite.constants.JspConstant;
 import by.mysite.model.db.ConnectionManager;
 import by.mysite.model.entities.order.Order;
 import by.mysite.model.entities.order.OrderItem;
@@ -144,10 +143,19 @@ public class OrderDao {
                 sb.append("<h2 class = 'underlined'>Total amount: ")
                         .append(rs.getDouble(AMOUNT_COL)).append(" byn.</h2>");
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return sb.toString();
+    }
+
+    public void removeOrderById(String orderId) {
+        try (Connection cn = ConnectionManager.getConnection();
+             PreparedStatement ps = cn.prepareStatement(REMOVE_ORDER_BY_ID)) {
+            ps.setString(1, orderId);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

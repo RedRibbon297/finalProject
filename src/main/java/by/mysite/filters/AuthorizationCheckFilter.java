@@ -1,7 +1,5 @@
 package by.mysite.filters;
 
-import by.mysite.constants.JspConstant;
-
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;

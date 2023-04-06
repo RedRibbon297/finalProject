@@ -40,7 +40,6 @@ public class CartController extends AbstractController {
         HttpSession session = req.getSession();
         List<OrderItem> items = cartService.processCard(session, cartAction, item);
         session.setAttribute(ORDER_ITEMS_ATTR, items);
-
         if ("addToCart".equals(cartAction)) {
             redirectToMenuPage(resp, foodType);
         } else {
